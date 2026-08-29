@@ -1,4 +1,4 @@
-const transporter = require("../config/mailer");
+const resend = require("../config/mailer");
 
 const sendComplaintEmail = async (req, res) => {
   try {
@@ -12,22 +12,38 @@ const sendComplaintEmail = async (req, res) => {
       });
     }
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    const { data, error } = await resend.emails.send({
+      from: "Complaint App <onboarding@resend.dev>",
 
-      // 👇 Change this to the email where you want complaints
+      // CM email
       to: "aswinsanjay5@gmail.com",
 
       subject: subject || "New Complaint Received",
 
-      html: `<p>${complaint}</p>`,
-    };
+      html: `
+        <div>
+          <p>${complaint}</p>
+        </div>
+      `,
+    });
 
-    await transporter.sendMail(mailOptions);
+    // Resend returned an error
+    if (error) {
+      console.error("Resend error:", error);
+
+      return res.status(500).json({
+        success: false,
+        message: "Failed to send complaint email",
+        error: error.message,
+      });
+    }
+
+    console.log("Email sent successfully:", data);
 
     return res.status(200).json({
       success: true,
       message: "Complaint email sent successfully",
+      data,
     });
 
   } catch (error) {
