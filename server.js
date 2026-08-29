@@ -15,11 +15,24 @@ const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const complaintRoutes = require("./routes/complaintRoutes");
-
-// Connect MongoDB
-connectDB();
+const emailRoutes = require("./routes/emailRoutes");
 
 const app = express();
+
+const startServer = async () => {
+  try {
+    await connectDB();
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 // Security
 app.use(helmet());
@@ -69,14 +82,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subCategoryRoutes);
 app.use("/api/complaints", complaintRoutes);
-
+app.use("/api/email", emailRoutes);
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
-
-// Server
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
-});
