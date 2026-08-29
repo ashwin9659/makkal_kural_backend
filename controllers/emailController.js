@@ -1,4 +1,4 @@
-const resend = require("../config/mailer");
+const brevo = require("../config/mailer");
 
 const sendComplaintEmail = async (req, res) => {
   try {
@@ -12,42 +12,43 @@ const sendComplaintEmail = async (req, res) => {
       });
     }
 
-    const { data, error } = await resend.emails.send({
-      from: "Complaint App <onboarding@resend.dev>",
+    const result = await brevo.transactionalEmails.sendTransacEmail({
+      sender: {
+        name: "Complaint App",
+        email: process.env.BREVO_SENDER_EMAIL,
+      },
 
-      // CM email
-      to: "aswinsanjay5@gmail.com",
+      to: [
+        {
+          email: "aswinsanjay5@gmail.com",
+        },
+      ],
 
-      subject: subject || "New Complaint Received",
+      subject: subject,
 
-      html: `
-        <div>
-          <p>${complaint}</p>
-        </div>
+      htmlContent: `
+        <html>
+          <body>
+            <h3>${subject}</h3>
+
+            <p>${complaint}</p>
+          </body>
+        </html>
       `,
+
+      textContent: complaint,
     });
 
-    // Resend returned an error
-    if (error) {
-      console.error("Resend error:", error);
-
-      return res.status(500).json({
-        success: false,
-        message: "Failed to send complaint email",
-        error: error.message,
-      });
-    }
-
-    console.log("Email sent successfully:", data);
+    console.log("Brevo email sent successfully:", result);
 
     return res.status(200).json({
       success: true,
       message: "Complaint email sent successfully",
-      data,
+      messageId: result.messageId,
     });
 
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error("Brevo email sending error:", error);
 
     return res.status(500).json({
       success: false,
