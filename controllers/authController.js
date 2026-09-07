@@ -14,7 +14,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error(errors.array()[0].msg);
   }
 
-  const { name, phone, password, address, ward, role } = req.body;
+  const { name, phone, password, address, ward, role, tvkian } = req.body;
 
   const finalRole = role === "admin" ? "admin" : "citizen";
 
@@ -43,6 +43,7 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
     address,
     role: finalRole,
+    tvkian: tvkian ?? false,
     ...(wardDoc ? { ward: wardDoc._id } : {}),
   });
 
