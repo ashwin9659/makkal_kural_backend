@@ -15,6 +15,7 @@ const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const complaintRoutes = require("./routes/complaintRoutes");
+const tvkEnrollmentRoutes = require("./routes/tvkEnrollmentRoutes");
 
 const app = express();
 
@@ -40,7 +41,7 @@ app.use(helmet());
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN || "*",
-  })
+  }),
 );
 
 // Body parser
@@ -81,6 +82,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subCategoryRoutes);
 app.use("/api/complaints", complaintRoutes);
+app.use("/api/tvk-enrollments", tvkEnrollmentRoutes);
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
