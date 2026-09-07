@@ -42,13 +42,17 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    tvkian: {
+      type: Boolean,
+      default: false,
+    },
     preferredLanguage: {
-  type: String,
-  enum: ["en", "ta"],
-  default: "en",
-},
+      type: String,
+      enum: ["en", "ta"],
+      default: "en",
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // Hash password before saving

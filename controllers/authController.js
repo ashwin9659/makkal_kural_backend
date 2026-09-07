@@ -55,6 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
       address: user.address,
       ward: wardDoc ? wardDoc.name : null,
       role: user.role,
+      tvkian: user.tvkian,
       token: generateToken(user._id),
     },
   });
@@ -73,7 +74,9 @@ const loginUser = asyncHandler(async (req, res) => {
   const { phone, password } = req.body;
 
   // include password field explicitly since schema has select:false
-  const user = await User.findOne({ phone }).select("+password").populate("ward", "name number");
+  const user = await User.findOne({ phone })
+    .select("+password")
+    .populate("ward", "name number");
 
   if (!user || !(await user.matchPassword(password))) {
     res.status(401);
@@ -94,6 +97,7 @@ const loginUser = asyncHandler(async (req, res) => {
       address: user.address,
       ward: user.ward,
       role: user.role,
+      tvkian: user.tvkian,
       token: generateToken(user._id),
     },
   });
@@ -103,8 +107,13 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   GET /api/auth/me
 // @access  Private
 const getMe = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id).populate("ward", "name number");
-  res.json({ success: true, data: user });
+  const user = await User.findById(req.user._id).populate(
+    "ward",
+    "name number",
+  );
+  const userData = user.toObject();
+  userData.tvkian = userData.tvkian ?? false;
+  res.json({ success: true, data: userData });
 });
 
 module.exports = { registerUser, loginUser, getMe };
