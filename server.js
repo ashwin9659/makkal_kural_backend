@@ -18,6 +18,7 @@ const complaintRoutes = require("./routes/complaintRoutes");
 const tvkEnrollmentRoutes = require("./routes/tvkEnrollmentRoutes");
 const deleteAccountRoutes = require("./routes/deleteAccountRoutes");
 const privacyPolicyRoutes = require("./routes/privacyPolicyRoutes");
+const childSafetyRoutes = require("./routes/childSafetyRoutes");
 
 const app = express();
 
@@ -87,6 +88,7 @@ app.use("/api/complaints", complaintRoutes);
 app.use("/api/tvk-enrollments", tvkEnrollmentRoutes);
 app.use("/api/delete-account", deleteAccountRoutes);
 app.use("/api/privacy-policy", privacyPolicyRoutes);
+app.use("/api/child-safety", childSafetyRoutes);
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
