@@ -16,6 +16,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const complaintRoutes = require("./routes/complaintRoutes");
 const tvkEnrollmentRoutes = require("./routes/tvkEnrollmentRoutes");
+const deleteAccountRoutes = require("./routes/deleteAccountRoutes");
 
 const app = express();
 
@@ -83,6 +84,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subCategoryRoutes);
 app.use("/api/complaints", complaintRoutes);
 app.use("/api/tvk-enrollments", tvkEnrollmentRoutes);
+app.use("/api/delete-account", deleteAccountRoutes);
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
