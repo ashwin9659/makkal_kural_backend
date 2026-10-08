@@ -58,11 +58,31 @@ router.get("/", (req, res) => {
     <body>
       <div class="container">
 
-        <h1>Privacy Policy</h1>
+       <h1>Privacy Policy</h1>
 
-        <p class="updated">
-          Last updated: September 2026
-        </p>
+<p class="updated">
+  Last updated: October 2026
+</p>
+
+<h2>1. App and Developer Information</h2>
+
+<p>
+  <strong>App Name:</strong> Makkal Kural<br />
+  <strong>Developer Name:</strong> Ashwin_Sanjai<br />
+  <strong>Legal Name:</strong> ASHWIN SANJAY MURUGESAN<br />
+  <strong>Contact Email:</strong> aswinsanjay5@gmail.com<br />
+  <strong>Location:</strong> Kottaram, Kanyakumari, Tamil Nadu, India
+</p>
+
+<p>
+  Makkal Kural is developed and maintained by
+  <strong>Ashwin_Sanjai</strong>.
+</p>
+
+<p>
+  This Privacy Policy explains how information is collected, used,
+  stored, and protected when you use the Makkal Kural application.
+</p>
 
         <p>
           Welcome to <strong>Makkal Kural</strong>. We respect your privacy
@@ -71,7 +91,7 @@ router.get("/", (req, res) => {
           used, stored, and protected when you use the Makkal Kural app.
         </p>
 
-        <h2>1. Information We Collect</h2>
+        <h2>2. Information We Collect</h2>
 
         <p>
           When you create and use an account, we may collect information
@@ -87,7 +107,7 @@ router.get("/", (req, res) => {
           <li>Photos that you choose to upload through the app</li>
         </ul>
 
-        <h2>2. How We Use Your Information</h2>
+        <h2>3. How We Use Your Information</h2>
 
         <p>
           The information collected may be used to:
@@ -101,7 +121,7 @@ router.get("/", (req, res) => {
           <li>Maintain and improve the security and functionality of the app</li>
         </ul>
 
-        <h2>3. Photos and Camera</h2>
+        <h2>4. Photos and Camera</h2>
 
         <p>
           The app may request access to your camera or photos when a feature
@@ -109,7 +129,7 @@ router.get("/", (req, res) => {
           the functionality for which you choose to provide them.
         </p>
 
-        <h2>4. Data Storage and Security</h2>
+        <h2>5. Data Storage and Security</h2>
 
         <p>
           Your account information and other information submitted through
@@ -118,7 +138,7 @@ router.get("/", (req, res) => {
           unauthorized access, alteration, disclosure, or destruction.
         </p>
 
-        <h2>5. Data Sharing</h2>
+        <h2>6. Data Sharing</h2>
 
         <p>
           We do not sell your personal information.
@@ -132,7 +152,7 @@ router.get("/", (req, res) => {
           and integrity of the service.
         </p>
 
-        <h2>6. Data Retention</h2>
+        <h2>7. Data Retention</h2>
 
         <p>
           We retain personal information for as long as necessary to
@@ -140,7 +160,7 @@ router.get("/", (req, res) => {
           legal obligations, resolve disputes, and enforce our agreements.
         </p>
 
-        <h2>7. Account Deletion</h2>
+        <h2>8. Account Deletion</h2>
 
         <p>
           Users can request deletion of their account and associated
@@ -153,7 +173,7 @@ router.get("/", (req, res) => {
           the account from unauthorized deletion.
         </p>
 
-        <h2>8. Children's Privacy</h2>
+        <h2>9. Children's Privacy</h2>
 
         <p>
           Makkal Kural is not specifically directed toward children.
@@ -161,7 +181,7 @@ router.get("/", (req, res) => {
           without appropriate consent.
         </p>
 
-        <h2>9. Changes to This Privacy Policy</h2>
+        <h2>10. Changes to This Privacy Policy</h2>
 
         <p>
           We may update this Privacy Policy from time to time.
@@ -169,18 +189,20 @@ router.get("/", (req, res) => {
           revision date.
         </p>
 
-        <h2>10. Contact Us</h2>
+        <h2>11. Contact Us</h2>
 
-        <p>
-          If you have questions about this Privacy Policy or your personal
-          information, please contact us through the support contact
-          provided in the Makkal Kural app.
-        </p>
+   <p>
+  If you have questions about this Privacy Policy or your personal
+  information, please contact the developer:
+</p>
 
-        <p>
-          <strong>Makkal Kural</strong><br />
-          Kottaram Perur
-        </p>
+<p>
+  <strong>Makkal Kural</strong><br />
+  <strong>Developer:</strong> Ashwin_Sanjai<br />
+  <strong>Legal Name:</strong> ASHWIN SANJAY MURUGESAN<br />
+  Kottaram, Kanyakumari, Tamil Nadu, India<br />
+  <strong>Email:</strong> aswinsanjay5@gmail.com
+</p>
 
       </div>
     </body>
