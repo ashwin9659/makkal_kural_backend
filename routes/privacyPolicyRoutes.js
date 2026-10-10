@@ -68,7 +68,7 @@ router.get("/", (req, res) => {
 
 <p>
   <strong>App Name:</strong> Makkal Kural<br />
-  <strong>Developer Name:</strong> Ashwin_Sanjai<br />
+  <strong>Developer Name:</strong> Team AKS<br />
   <strong>Legal Name:</strong> ASHWIN SANJAY MURUGESAN<br />
   <strong>Contact Email:</strong> aswinsanjay5@gmail.com<br />
   <strong>Location:</strong> Kottaram, Kanyakumari, Tamil Nadu, India
@@ -76,7 +76,7 @@ router.get("/", (req, res) => {
 
 <p>
   Makkal Kural is developed and maintained by
-  <strong>Ashwin_Sanjai</strong>.
+  <strong>Team AKS</strong>.
 </p>
 
 <p>
@@ -198,7 +198,7 @@ router.get("/", (req, res) => {
 
 <p>
   <strong>Makkal Kural</strong><br />
-  <strong>Developer:</strong> Ashwin_Sanjai<br />
+  <strong>Developer:</strong> Team AKS<br />
   <strong>Legal Name:</strong> ASHWIN SANJAY MURUGESAN<br />
   Kottaram, Kanyakumari, Tamil Nadu, India<br />
   <strong>Email:</strong> aswinsanjay5@gmail.com
